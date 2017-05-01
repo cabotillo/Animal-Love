@@ -19,4 +19,6 @@ Route::get('/login', function () {
     return view('login');
 });
 
+Route::resource('p','ProvinciasController');
 Route::auth();
+
