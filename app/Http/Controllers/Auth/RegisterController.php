@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Usuarios;
 use App\Provincias;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ProvinciasController;
@@ -50,13 +50,13 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
+            'name' => 'required|max:25',
+            'apellidos' => 'required|max:50',
             'login' => 'required|max:25',
             'password' => 'required|min:8',
-            'nombre' => 'required|max:25',
-            'apellidos' => 'required|max:50',
             'email' => 'required|email|max:50',
             'telefono' => 'required|max:9',
-            'provincia' => 'required|max:50',
+            'provincia' => 'max:50',
         ]);
     }
 
@@ -68,14 +68,15 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'login' => $data['login'],
-            'password' => bcrypt($data['password']),
+        return Usuarios::create([
             'nombre' => $data['name'],
             'apellidos' => $data['apellidos'],
+            'login' => $data['login'],
+            'password' => bcrypt($data['password']),
             'email' => $data['email'],
             'telefono' => $data['telefono'],
-            'provincia' => $data['provincia'],
+            'provincia' => 'Islas Baleares',
+            'tipo' => '1',
         ]);
     }
 }

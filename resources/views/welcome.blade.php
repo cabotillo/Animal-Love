@@ -30,7 +30,7 @@
   <li><a href="/">Inicio</a></li>
   <li><a href="">Perfil</a></li>
   <li><a href="">Mensajes</a></li>
-  <li class="right"><a href="">Cerrar Sesión</a></li>
+  <li class="right"><a href="logout">Cerrar Sesión</a></li>
 </ul>
 @else
 <ul class="topnav fixed navbar-fixed-top text-uppercase">
@@ -43,8 +43,11 @@
 
 
 <!--BODY-->
-
-
+@if (Auth::check())
+<h1>{{Auth::user()->Login}}</h1>
+@else
+<h1>IE</h1>
+@endif
 
 <!--
 <div class="flex-center position-ref full-height">

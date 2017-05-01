@@ -21,10 +21,10 @@ class TablaUsuarios extends Migration
             $table->engine = 'InnoDB';
 
             $table->increments('idUsuario');
-            $table->string('Login','25')->unique();
-            $table->string('Password');
             $table->string('Nombre','25');
             $table->string('Apellidos','50');
+            $table->string('Login','25')->unique();
+            $table->string('Password');
             $table->string('Email','50')->unique();
             $table->integer('Telefono');
             $table->string('Provincia','50');

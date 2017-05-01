@@ -100,24 +100,7 @@
                             </div>
                         </div>
 
-                        <!--Provincia-->
-                        <div class="form-group{{ $errors->has('provincia') ? ' has-error' : '' }}">
-                            <label for="provincia">Provincia</label>
 
-                                
-                                <select class="form-control" name="provincia">
-                                    @foreach($provincias as $p)
-                                        <option value="{{$p->idProvincia}}">{{$p->Provincia}}</option>
-                                    @endforeach
-                                </select>
-
-                                @if ($errors->has('provincia'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('provincia') }}</strong>
-                                    </span>
-                                @endif
-
-                        </div>
 
 
                         <!--<div class="form-group">

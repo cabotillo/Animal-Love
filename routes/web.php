@@ -9,6 +9,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/home', function () {
+    return view('welcome');
+});
 Route::get('/', function () {
     return view('welcome');
 });
@@ -18,7 +21,10 @@ Route::get('/register', function () {
 Route::get('/login', function () {
     return view('login');
 });
+Route::get('/logout', function () {
+	Auth::logout();
+    return view('auth.login');
+});
 
-Route::resource('p','ProvinciasController');
 Route::auth();
 
