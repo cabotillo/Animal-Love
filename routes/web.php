@@ -29,6 +29,10 @@ Route::get('/editarperfil', function () {
 	Auth::logout();
     return view('editarperfil');
 });
+Route::get('/contacto', function () {
+	Auth::logout();
+    return view('contacto');
+});
 
 Route::auth();
 
