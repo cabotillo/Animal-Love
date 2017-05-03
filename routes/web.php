@@ -9,22 +9,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/home', function () {
-    return view('home');
-});
-Route::get('/', function () {
-    return view('home');
-});
-Route::get('/register', function () {
-    return view('register');
-});
-Route::get('/login', function () {
-    return view('login');
-});
-Route::get('/logout', function () {
-	Auth::logout();
-    return view('auth.login');
-});
+
+Route::get('/', 'HomeController@index')->name('home');
+
 Route::get('/editarperfil', function () {
 	Auth::logout();
     return view('editarperfil');
@@ -34,5 +21,8 @@ Route::get('/contacto', function () {
     return view('contacto');
 });
 
-Route::auth();
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
 

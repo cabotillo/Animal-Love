@@ -19,8 +19,8 @@ class TablaMascotas extends Migration
 
             $table->engine = 'InnoDB';
             $table->increments('idMascota');
-            $table->integer('idUsuario')->unsigned();
-            //$table->foreign('idUsuario')->references('idUsuario')->on('usuarios')->onDelete('cascade');
+            $table->integer('idUsuario');
+            //$table->foreign('idUsuario')->references('id')->on('usuarios')->onDelete('cascade');
             $table->string('Nombre','25');
             $table->string('Animal','25');
             $table->string('Raza','50');

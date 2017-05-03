@@ -20,16 +20,16 @@ class TablaUsuarios extends Migration
 
             $table->engine = 'InnoDB';
 
-            $table->increments('idUsuario');
+            $table->increments('id');
             $table->string('Nombre','25');
             $table->string('Apellidos','50');
             $table->string('Login','25')->unique();
             $table->string('Password');
             $table->string('Email','50')->unique();
-            $table->integer('Telefono');
-            $table->string('Provincia','50');
+            $table->string('Telefono');
+            $table->string('Provincia','50')->default('Islas Baleares');
             $table->string('Avatar','25')->default('avatar_usuario.png');
-            $table->integer('Tipo');
+            $table->integer('Tipo')->default('1');
             $table->rememberToken();
             $table->timestamps();
 

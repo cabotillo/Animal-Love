@@ -22,7 +22,7 @@ class TablaPublicaciones extends Migration
             $table->string('Titulo');
             $table->string('Cuerpo','255');
             $table->integer('idUsuario')->unsigned();
-            $table->foreign('idUsuario')->references('idUsuario')->on('usuarios')->onDelete('cascade');
+            $table->foreign('idUsuario')->references('id')->on('usuarios')->onDelete('cascade');
             $table->integer('idMascota')->unsigned();
             $table->foreign('idMascota')->references('idMascota')->on('mascotas')->onDelete('cascade');
             

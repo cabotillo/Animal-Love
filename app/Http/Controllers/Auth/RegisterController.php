@@ -3,9 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Usuarios;
-use App\Provincias;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\ProvinciasController;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
