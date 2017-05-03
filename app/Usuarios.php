@@ -2,16 +2,16 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
-use Illuminate\Auth\Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 
-class Usuarios extends Model implements AuthenticatableContract
+class Usuarios extends Authenticatable
 {
-	use Authenticatable;
+	use Notifiable;
 
     //
-    protected $fillable = ['nombre','apellidos','login','password','email','telefono','provincia','tipo'];
-    protected $hidden = ['password','remember_token'];
+    protected $fillable = ['nombre','apellidos','login','password','email','telefono'];
+    protected $hidden = ['password'];
 }
+

@@ -14,7 +14,6 @@ class ProvinciasController extends Controller
 
 		$provincias = Provincias::all();
 		
-		//$provincias = array('provincias' => array('ES-M' => 'Mallorca');)
 	    return view('register',['provincias' => $provincias]);
     }
 }

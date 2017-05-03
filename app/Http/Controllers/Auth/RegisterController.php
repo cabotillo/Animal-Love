@@ -54,7 +54,6 @@ class RegisterController extends Controller
             'password' => 'required|min:8',
             'email' => 'required|email|max:50',
             'telefono' => 'required|max:9',
-            'provincia' => 'max:50',
         ]);
     }
 
@@ -73,7 +72,6 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
             'email' => $data['email'],
             'telefono' => $data['telefono'],
-            'provincia' => 'Islas Baleares',
             'tipo' => '1',
         ]);
     }
